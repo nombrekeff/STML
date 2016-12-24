@@ -26,6 +26,7 @@ The above piece of ** stml ** code will result in:
 
 #### How to install it?
 npm:
+** *not supported yet**
 ```shell
 $ npm install stimule -g
 ```
