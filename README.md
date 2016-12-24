@@ -1,4 +1,4 @@
-# STML
+# Stimule / STML
 A simple html preprocessor made with nodejs, making It for fun
 
 

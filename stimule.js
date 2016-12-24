@@ -6,10 +6,10 @@
   @author: keff
   @version: 0.1.0
 
-  
+
   This is the class that compiles the stml
 */
-const StimuleCompiler = require("./src/stml-compiler")
+const StimuleCompiler = require("./lib/stml-compiler")
 
 
 
