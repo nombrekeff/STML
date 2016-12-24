@@ -1,0 +1,20 @@
+// Comment
+head
+    title "My title"
+    meta[value="ATRIBUTE"]
+    ,.link[src="/main.css", rel="stylesheet"]
+    @style(
+      .body{
+        color: green;
+        background: red;
+      }
+      .span-red{
+        color: red;
+      }
+    )
+body#id2(.body .logged-in)[name="body"]
+    div#id
+        div
+            span(.span-red) "Hello im a span"
+            span "var"
+            span "banananananan"

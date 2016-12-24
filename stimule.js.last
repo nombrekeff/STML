@@ -1,0 +1,129 @@
+#!/usr/bin/env node
+
+var fs = require("fs")
+
+module.exports = {
+  compile: function(inFile, outFile, c) {
+      fs.readFile( inFile, function (err, d) {
+        var fileData = d.toString().split("\n");
+        var blocks = [];
+        var lines = [];
+
+        function getWordsBetweenCurlies(str) {
+          var results = [], re = /{([^*]+)}*/g, text;
+
+          while(text = re.exec(str)) {
+            results.push(text[1]);
+          }
+          return results.join("").replace("\r\n", "");
+        }
+        function splitBlocks(arr, blocks) {
+            var cBracesStarted  = false,
+                cBracesEnded    = false,
+                openCBraces     = 0,
+                closedCBraces   = 0,
+                lastOpened      = [],
+                block           = "",
+                blocks          = blocks,
+                tab_space       = "    ",
+                BObj            = {startsAt: null}
+
+            function isNested() {
+
+            }
+            //console.log("Blocks", blocks, typeof block);
+
+            for(var i = 0; i < arr.length; i++){
+                lines[i] = {
+                    line: i,
+                    value: arr[i].replace("\n", "")
+                }
+            }
+            for(var e = 0; e < lines.length; e++){
+
+                var line    = lines[e].value,
+                    isOpen  = line.includes("{"),
+                    isClose = line.includes("}")
+
+
+                BObj.content = []
+                BObj.selector = "";
+                if(BObj.startsAt == null){
+                    BObj.startsAt = e;
+                }
+
+
+                if(isOpen){
+                    BObj.selector = line.split("{")[0].replace(/ /g,'');
+                    BObj.class = "";
+
+                    if(BObj.selector.includes(".")){
+                        var s = BObj.selector.split(".");
+                        BObj.selector = s[0]
+                        BObj.class = s[1]
+                        block += "<"+BObj.selector+" class='"+BObj.class+"'>"+"\n";
+                        lastOpened.push(BObj.selector);
+                    }else{
+                        block += "<"+BObj.selector+">"+"\n";
+                        lastOpened.push(BObj.selector);
+                    }
+
+                    openCBraces++;
+
+                }
+                if(isClose){
+
+                    block += "</"+lastOpened.reverse()[openCBraces]+">"+"\n";
+                    closedCBraces++;
+                }
+                if(openCBraces > 0 && closedCBraces > 0 && openCBraces == closedCBraces){
+
+                    BObj.endsAt = e;
+                    BObj.block = block;
+
+                    blocks.push(BObj);
+                    BObj = {};
+                    block = "";
+                    openCBraces = 0
+                    closedCBraces = 0
+                }
+                if(!isOpen && !isClose){
+
+                    if(line != ""){
+                        //console.log("Nomrla line ",line.split(/.+?(?= ")/));
+                        BObj.selector = /.+?(?= ")/.exec(line)
+                        BObj.text = /"\s*(.*?)\s*"/.exec(line);
+                        //console.log("sel",BObj.selector);
+                        block += "<"+BObj.selector[0].replace(/ /g,'')+">"+BObj.text+"</"+BObj.selector[0].replace(/ /g,'')+">"+"\n";
+                    }
+                }
+            }
+            console.log("last",blocks);
+            return blocks;
+        }
+
+
+
+        blocks = splitBlocks(fileData, blocks);
+        //console.log("Bocks",blocks)
+
+        // blocks.forEach(function (e) {
+        //
+        //     e.content = splitBlocks(getWordsBetweenCurlies(e.block).split("\n"), []);
+        //     console.log("Block", e.content);
+        //     // e.sub_blocks = splitBlocks(e.block.split("\\{([^}]*.?)\\}"), []);
+        //     // console.log(e.sub_blocks)
+        // })
+
+
+        fs.writeFile("./index.html", blocks.map(function (f) {return f = f.block}).join("\n-------------\n"),
+            function(err) {
+                if(err) {
+                    return console.log(null,err);
+                }
+                console.log("The file was saved!");
+            });
+        });
+
+  }
+};

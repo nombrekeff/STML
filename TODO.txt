@@ -1,0 +1,34 @@
+<!-- lexical: what are the rules for words in the language, what characters are
+legal, what do numbers look like, and so on.
+
+syntactic: how do words of the language combine into larger units? In C#
+larger units are things like expressions, statements, methods, classes, and so on.
+
+semantic: given a syntactically legal program, how do you figure out
+what the program does? -->
+
+
+
+<!--  Bloque normal -->
+span
+    <!-- Se traduce a -->
+    <span></span>
+
+
+
+<!--  Bloque con clase -->
+span(red label)
+    <!-- Se traduce a -->
+    <span class="red label"></span>
+
+
+<!--  Bloque con attributo -->
+span[attr="attrValue", value="name"]
+    <!-- Se traduce a -->
+    <span attr="attrValue" value="name"></span>
+
+
+<!--  Bloque con texto -->
+span "Hola"
+    <!-- Se traduce a -->
+    <span>Hola</span>   
