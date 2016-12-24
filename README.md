@@ -42,7 +42,8 @@ $ npm install -g
 $ cd where/the/stmlfile/is
 $ stimule <input_file> [output_file]
 ```
-You have to call stimule command with two parameters
+You have to call stimule command with two parameters:
+
 1. **input_file**  `#required`: should be a stml file
 
 2. **output_file**  `#optional`:  the name/path for the output html file, defaults to the name of **input_file**
