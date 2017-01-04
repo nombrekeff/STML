@@ -11,7 +11,7 @@ div#target(.bold .row)[click="doX()"]
   div(.col-6)
     span "You like stones?"
 ```
-The above piece of **stml** code will result in:
+The above piece of **stml** syntax will result in:
 
 ```html
 <div id="target" class="bold row" click="doX()">

@@ -1,13 +1,15 @@
 {
-    "lexic":{
-        "validChars":"abcdefghjiklmnopqrstuvwxyzABCDEFGHJKILMNOPQRSTUVWXYZ_$1234567890"
-    },
-    "closingTags":[
-        "div", "span", "section", "h1", "h2", "h3", "h5", "p", "a", "b", "i",
-        "script", "body", "header","head", "html", "style", "svg", "canvas", "table","th",
-        "thead","tbody","tr","td","strong","bold", "title", "textarea"
-    ],
-    "selfClosing":[
-        "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "menuitem", "meta", "param", "source", "track", "wbr"
-    ]
+  "closingTags":[
+      "div", "span", "section", "h1", "h2", "h3", "h5", "p", "a", "b", "i",
+      "script", "body", "header","head", "html", "style", "svg", "canvas",
+      "table","th","thead","tbody","tr","td","strong","bold", "title",
+      "textarea"
+  ],
+  "selfClosing":[
+      "area", "base", "br", "col", "embed", "hr", "img", "input",
+      "link", "menuitem", "meta", "param", "source", "track", "wbr"
+  ],
+  "metatags": [
+    "include", "style", "for", "document"
+  ]
 }
