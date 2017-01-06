@@ -1,0 +1,5 @@
+body#id2(.body .logged-in)[name="body"]
+    div#id
+      @for(i = 0; i < 6; i += 2){
+         span(.banan-${i}) "text ${i}"
+      }
