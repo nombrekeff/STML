@@ -44,7 +44,6 @@ The above piece of **stml** syntax will result in:
 
 #### How to install it?
 npm:
-* *not supported yet*
 ```shell
 $ npm install stimule -g
 ```
