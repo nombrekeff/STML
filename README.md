@@ -24,6 +24,24 @@ The above piece of **stml** syntax will result in:
 </div>
 ```
 
+### For Loop
+
+```sass
+div#id
+  @for(i = 0; i < 6; i += 2){
+     span(.banan-${i}) "text ${i}"
+  }
+```
+The above piece of **stml** syntax will result in:
+
+```html
+<div id="id">
+  <span class="banan-0">text 0</span>
+  <span class="banan-2">text 2</span>
+  <span class="banan-4">text 4</span>
+</div>
+```
+
 #### How to install it?
 npm:
 * *not supported yet*
