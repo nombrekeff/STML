@@ -1,11 +1,14 @@
 {
   "name": "stimule",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Compiler for stimule, a simple html preprocessor",
   "author": "nombrekeff",
   "license": "ISC",
   "bin": {
     "stimule": "./stimule.js"
+  },
+  "scripts": {
+    "compile": "node stimule.js"
   },
   "dependencies": {
     "cli-color": "^1.1.0",

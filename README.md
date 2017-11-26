@@ -8,7 +8,7 @@ A simple html preprocessor made with nodejs, making It for fun
 div#target(.bold .row)[click="doX()"]
   div(.col-4)
     span "Heyy"
-  div(.col-6)
+  div(.col-6 .centered)
     span "You like stones?"
 ```
 The above piece of **stml** syntax will result in:

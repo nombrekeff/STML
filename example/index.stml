@@ -18,4 +18,6 @@ body#id2(.body .logged-in)[name="body"]
             span(.span-red) "Hello im a span"
             span "var"
             span "banananananan"
-            // @include("html.hmtl")
+            @for(i = 0; i < 6; a += 2){
+               span(.banan-${i}) "text ${i}"
+            }
