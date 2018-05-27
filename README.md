@@ -13,7 +13,7 @@ div#target(.bold .row)[click="doX()"]
 ```
 The above piece of **stml** syntax will result in:
 
-```html
+```sass
 <div id="target" class="bold row" click="doX()">
   <div class="col-4">
     <span>Heyy</span>
@@ -26,7 +26,6 @@ The above piece of **stml** syntax will result in:
 
 #### How to install it?
 npm:
-* *not supported yet*
 ```shell
 $ npm install stimule -g
 ```
