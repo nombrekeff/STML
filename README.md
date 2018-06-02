@@ -1,6 +1,8 @@
 # Stimule / STML
 A simple html preprocessor made with nodejs, making It for fun
 
+[![npm version](https://badge.fury.io/js/stimule.svg)](https://badge.fury.io/js/loggin-js)
+[![npm](https://img.shields.io/npm/dw/stimule.svg?colorB=blue)](https://www.npmjs.com/package/loggin-js)
 
 ### Overview
 
