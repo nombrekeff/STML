@@ -10,6 +10,7 @@
   "dependencies": {
     "cli-color": "^1.1.0",
     "commander": "^2.9.0",
-    "js-beautify": "^1.6.4"
+    "js-beautify": "^1.6.4",
+    "loggin-js": "^0.2.3"
   }
 }
