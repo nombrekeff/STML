@@ -2,7 +2,7 @@
 A simple html preprocessor made with nodejs, making It for fun
 
 [![npm version](https://badge.fury.io/js/stimule.svg)](https://badge.fury.io/js/loggin-js)
-[![npm](https://img.shields.io/npm/dw/stimule.svg?colorB=blue)](https://www.npmjs.com/package/loggin-js)
+[![npm](https://img.shields.io/npm/dw/stimule.svg?colorB=blue)](https://www.npmjs.com/package/loggin-js) [![Greenkeeper badge](https://badges.greenkeeper.io/nombrekeff/STML.svg)](https://greenkeeper.io/)
 
 ### Overview
 
